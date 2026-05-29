@@ -34,7 +34,7 @@ export default class Cl_vEmpleado implements I_vEmpleado {
                 <td>${pedido.Cantidad || 0}</td>
                 <td>${pedido.Banco || 'N/A'}</td>
                 <td>${pedido.DatosPago || 'N/A'}</td>
-                <td>${pedido.MontoTotal = pedido.Precio * pedido.Cantidad}</td>
+                <td>${pedido.MontoTotal = pedido.Precio * pedido.Cantidad }$</td>
                 <td style="color: ${pedido.estado === 'Aprobado' ? '#28a745' : 
                                     pedido.estado === 'Cancelado' ? '#dc3545' : '#6c757d'}; 
                                     font-weight: bold;">
