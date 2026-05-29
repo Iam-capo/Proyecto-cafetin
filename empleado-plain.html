@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafetín</title>
+</head>
+<body>
+    <h1>Control de Pedidos</h1>
+    <table>
+                <thead>
+                    <tr>
+                        <th>Cliente</th>
+                        <th>Producto</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th>Banco</th>
+                        <th>Referencia</th>
+                        <th>Precio Total</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaPedidos"></tbody>
+            </table>
+
+    <button id="btAprobar">Aprobar Pedido</button>
+    <button id="btCancelar">Rechazar Pedido</button>
+
+    <script type="module">
+        import cCafetin from "./dist/controllers/Cl_cCafetin.js";
+
+        document.addEventListener("DOMContentLoaded", () => {
+        const cafetin = new cCafetin();
+
+        console.log("¡Sistema del Cafetín encendido y operativo!");
+        });
+    </script>
+    
+</body>
+</html>

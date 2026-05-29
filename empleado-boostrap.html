@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafetín</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f4f4f9; }
+        .contenedor { display: flex; gap: 30px; justify-content: space-between; }
+        .panel { flex: 1; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        h2 { color: #333; border-bottom: 2px solid #ddd; padding-bottom: 8px; }
+        .campo { margin-bottom: 12px; }
+        label { display: block; font-weight: bold; margin-bottom: 4px; }
+        input, select, button { width: 100%; padding: 8px; margin-top: 4px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        button { background-color: #007bff; color: white; border: none; cursor: pointer; font-weight: bold; }
+        button:hover { background-color: #0056b3; }
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        tr:hover { background-color: #f1f1f1; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="panel">
+            <h2>Control de Pedidos (Empleado)</h2>
+            <p><small>Haz clic en una fila de la tabla para seleccionarla antes de procesar.</small></p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Cliente</th>
+                        <th>Producto</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th>Banco</th>
+                        <th>Referencia</th>
+                        <th>Precio Total</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaPedidos"></tbody>
+            </table>
+
+            <div style="display: flex; gap: 10px; margin-top: 15px;">
+                <button id="btAprobar" style="background-color: #28a745;">Aprobar Seleccionado</button>
+                <button id="btCancelar" style="background-color: #dc3545;">Rechazar Seleccionado</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script type="module">
+        import cCafetin from "./dist/controllers/Cl_cCafetin.js";
+
+        document.addEventListener("DOMContentLoaded", () => {
+        const cafetin = new cCafetin();
+
+        console.log("¡ Sistema del Cafetín encendido y operativo!");
+        });
+    </script>
+</body>
+</html>

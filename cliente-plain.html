@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedidos del cafetin</title>
+    <style>
+       
+    </style>
+</head>
+<body>
+    <h1>Realizar Pedido</h1>
+
+    <div class="campo">
+        <label for="inNombreCliente"><h3>Nombre del Cliente:</h3></label>
+        <input type="text" id="inNombreCliente" placeholder="Ej: Juan">
+    </div>
+
+      <div class="campo">
+        <label for="inApellidoCliente"><h3>Apellido del Cliente:</h3></label>
+        <input type="text" id="inApellidoCliente" placeholder="Ej: Pérez">
+    </div>
+
+    <div class="campo">
+        <label for="inCedulaCliente"><h3>Cédula del Cliente:</h3></label>
+        <input type="text" id="inCedulaCliente" placeholder="Ej: 12345678">
+    </div>
+
+      <div class="campo">
+        <label for="inEdadCliente"><h3>Edad del Cliente:</h3></label>
+        <input type="number" id="inEdadCliente" placeholder="Ej: 25">
+    </div>
+
+      <div class="campo">
+        <label for="inSexoCliente"><h3>Sexo del Cliente:</h3></label>
+        <select id="inSexoCliente">
+            <option value=""> Seleccione </option>
+            <option value="Masculino">Masculino</option>
+            <option value="Femenino">Femenino</option>
+        </select>
+    </div>
+
+    <div class="campo">
+        <label for="inCodProducto"><h3>Seleccione el Producto:</h3></label>
+        <select id="inCodProducto">
+            <option value=""> Seleccione </option>
+            <option value="P01">Café (P01) - $1.50</option>
+            <option value="P02">Empanada (P02) - $2.00</option>
+            <option value="P03">Hamburguesa (P03) - $1.75</option>
+            <option value="P04">Perro (P04) - $1.50</option>
+            <option value="P05">Pollo (P05) - $2.00</option>
+        </select>
+    </div>
+
+    <div class="campo">
+        <label for="inCntCantidad"> <h3>Cantidad:</h3></label>
+        <input type="number" id="inCntCantidad" min="1" value="1">
+    </div>
+
+    <div class="campo">
+        <label for="inBancoOrigen"><h3>Banco de Origen:</h3></label>
+        <input type="text" id="txtBancoOrigen" placeholder="Ej: Banesco">
+    </div>
+
+    <div class="campo">
+        <label for="inDatosPago"><h3>Referencia del Pago:</h3></label>
+        <input type="text" id="txtDatosPago" placeholder="Ej: 12345678">
+    </div>
+    <button id = "btEnviar">Enviar Pedido al Cafetín</button>
+
+    <script type="module">
+        import cCafetin from "./dist/controllers/Cl_cCafetin.js";
+
+        document.addEventListener("DOMContentLoaded", () => {
+        const cafetin = new cCafetin();
+
+        console.log("¡Sistema del Cafetín encendido y operativo!");
+        });
+    </script>
+</body>
+</html>

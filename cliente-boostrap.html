@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cafetín Universitario - Pedidos</title>
+    <title>Pedidos del cafetin</title>
     <style>
-        /* Un diseño básico en dos columnas para ver ambos paneles al mismo tiempo */
         body { font-family: Arial, sans-serif; margin: 20px; background-color: #f4f4f9; }
         .contenedor { display: flex; gap: 30px; justify-content: space-between; }
         .panel { flex: 1; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
@@ -22,13 +21,12 @@
     </style>
 </head>
 <body>
-
-    <h1>☕ Sistema de Pedidos - Cafetín</h1>
+    <h1>Sistema de Pedidos - Cafetín</h1>
 
     <div class="contenedor">
 
         <div class="panel">
-            <h2>🛒 Realizar Pedido (Cliente)</h2>
+            <h2>Realizar Pedido (Cliente)</h2>
 
             <div class="campo">
                 <label for="inNombreCliente">Nombre del Cliente:</label>
@@ -53,7 +51,7 @@
               <div class="campo">
                 <label for="inSexoCliente">Sexo del Cliente:</label>
                 <select id="inSexoCliente">
-                    <option value="">-- Seleccione --</option>
+                    <option value=""> Seleccione </option>
                     <option value="Masculino">Masculino</option>
                     <option value="Femenino">Femenino</option>
                 </select>
@@ -62,7 +60,7 @@
             <div class="campo">
                 <label for="inCodProducto">Seleccione el Producto:</label>
                 <select id="inCodProducto">
-                    <option value="">-- Seleccione --</option>
+                    <option value=""> Seleccione </option>
                     <option value="P01">Café (P01) - $1.50</option>
                     <option value="P02">Empanada (P02) - $2.00</option>
                     <option value="P03">Hamburguesa (P03) - $1.75</option>
@@ -89,52 +87,14 @@
             <button id = "btEnviar">Enviar Pedido al Cafetín</button>
         </div>
 
+        <script type="module">
+            import cCafetin from "./dist/controllers/Cl_cCafetin.js";
 
-        <div class="panel">
-            <h2>🧑‍🍳 Control de Pedidos (Empleado)</h2>
-            <p><small>💡 Haz clic en una fila de la tabla para seleccionarla antes de procesar.</small></p>
-            
-            <table>
-                <thead>
-                    <tr>
-                        <th>Cliente</th>
-                        <th>Producto</th>
-                        <th>Precio</th>
-                        <th>Banco</th>
-                        <th>Referencia</th>
-                        <th>Precio Total</th>
-                        <th>Estado</th>
-                    </tr>
-                </thead>
-                <tbody id="tablaPedidos"></tbody>
-            </table>
+            document.addEventListener("DOMContentLoaded", () => {
+            const cafetin = new cCafetin();
 
-            <div style="display: flex; gap: 10px; margin-top: 15px;">
-                <button id="btAprobar" style="background-color: #28a745;">✅ Aprobar Seleccionado</button>
-                <button id="btCancelar" style="background-color: #dc3545;">❌ Rechazar Seleccionado</button>
-            </div>
-        </div>
-
-    </div>
-
-    <script type="module">
-        import Cl_mCafetin from "./dist/models/Cl_mCafetin.js";
-        import Cl_vCliente from "./dist/views/Cl_vCliente.js";
-        import Cl_vEmpleado from "./dist/views/Cl_vEmpleado.js";
-        import Cl_cCliente from "./dist/controllers/Cl_cCliente.js";
-        import Cl_cEmpleado from "./dist/controllers/Cl_cEmpleado.js";
-
-        document.addEventListener("DOMContentLoaded", () => {
-        const modeloGlobal = new Cl_mCafetin();
-        const vistaCliente = new Cl_vCliente();
-        const vistaEmpleado = new Cl_vEmpleado();
-
-        const controladorCliente = new Cl_cCliente(modeloGlobal, vistaCliente);
-        const controladorEmpleado = new Cl_cEmpleado(modeloGlobal, vistaEmpleado);
-
-        console.log("¡🚀 Sistema del Cafetín encendido y operativo!");
-        });
-    </script>
-
+            console.log("¡ Sistema del Cafetín encendido y operativo!");
+            });
+        </script>
 </body>
 </html>
