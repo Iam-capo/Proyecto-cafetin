@@ -1,0 +1,51 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f7fafc;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+}
+
+.selection-container { max-width: 960px; width: 100%; text-align: center; }
+
+.selection-header { margin-bottom: 40px; }
+h1 { font-size: 2.5rem; color: #2d3748; }
+
+.role-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.role-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.role-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.access-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    border-radius: 6px;
+    color: white;
+    font-weight: bold;
+    background-color: #4a5568;
+}
+
+.client-improved .access-btn { background-color: #3182ce; }
+.employee-improved .access-btn { background-color: #38a169; }
+
+.selection-footer { margin-top: 40px; font-size: 0.9rem; color: #718096; }
